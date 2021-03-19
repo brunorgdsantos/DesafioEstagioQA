@@ -1,5 +1,5 @@
 # Desafio Estagio QA
-Projeto desenvolvido para a empresa XXX, como participação no desafio de seleção QA.
+Projeto desenvolvido para a Fábrica de Software - UNIPÊ.
 
 ## 🚀 Introdução
 As informaçes que se seguem tem como objetivo auxiliar no entendimento do Plano de teste e dos Casos de testes desenvolvidos, assim como também nas atividades de testes realizadas nas aplicações conforme solicitados no desafio.
