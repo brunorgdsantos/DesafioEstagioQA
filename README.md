@@ -1,5 +1,5 @@
 # Desafio Estagio QA
-Projeto desenvolvido para a Fábrica de Software - UNIPÊ.
+Projeto desenvolvido como forma de participação no processo seletivo de estágio na area de QA.
 
 ## 🚀 Introdução
 As informaçes que se seguem tem como objetivo auxiliar no entendimento do Plano de teste e dos Casos de testes desenvolvidos, assim como também nas atividades de testes realizadas nas aplicações conforme solicitados no desafio.
