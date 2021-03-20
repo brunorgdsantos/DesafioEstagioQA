@@ -1,0 +1,22 @@
+import java.io.File;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Secundario {
+	
+	static WebDriver driver;
+	
+	public static void abrirChrome2() {
+		
+		//COMANDO PARA CLICAR NAS SEGUINTES OPÇÕES: QA>CLIENTE>INCLUIR 
+		WebElement click_opcao_qa_2 = driver.findElement(By.xpath("/html/body/aside/nav/ul[2]/li/a/i")); 
+		click_opcao_qa_2.click(); //CLICANDO NA OPÇÃO QA
+		WebElement click_opcao_clientes_2 = driver.findElement(By.xpath("/html/body/aside/nav/ul[2]/li/ul/li[1]/a/span")); 
+		click_opcao_clientes_2.click();//CLICANDO NA OPÇÃO CLIENTES
+		WebElement click_opcao_incluir_2= driver.findElement(By.xpath("/html/body/aside/nav/ul[2]/li/ul/li[1]/ul/li[1]/a/i"));
+		click_opcao_incluir_2.click();//CLICANDO NA OPÇÃO INCLUIR
+	}
+}

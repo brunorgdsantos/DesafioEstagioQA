@@ -1,0 +1,37 @@
+import java.util.Scanner;
+
+public class exercicio1 {
+
+	public static void main(String[] args) {
+		Scanner teclado = new Scanner (System.in);
+		
+		String aluno;
+		float nota1, nota2, media, soma, mediaTurma;
+		
+		soma = 0;
+		
+		for(int i = 0; i < 3; i++) {
+			System.out.print("Nome do aluno");
+			aluno = teclado.nextLine();
+			System.out.print("Nota 1:");
+			nota1 = teclado.nextFloat();
+			System.out.print("Nota 2:");
+			nota2 = teclado.nextFloat();
+			teclado.nextLine();
+			
+			media = (nota1 + nota2)/2;
+			soma = soma + media;
+			
+			System.out.printf("Media aluno: %.2f\n", media);
+			
+			if(media >= 6) {
+				System.out.println("Aluno Aprovado");
+			}else System.out.println("Aluno Reprovado");
+		}
+		
+		mediaTurma = soma/3;
+		System.out.printf("Media turma = %1.1\n", mediaTurma);
+		teclado.close();
+	}
+
+}

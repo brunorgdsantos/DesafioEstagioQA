@@ -1,0 +1,71 @@
+import java.io.File;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.htmlunit.HtmlUnitDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+
+public class Principal {//CLASSE PRINCIPAL
+	
+	static WebDriver driver;
+	
+	public static void main(String[] args) {//METODO PRINCIPAL
+		abrirChrome();//CHAMANDO O METODO ABRIRCHROME
+		//TesteUsuarioInvalido.usuario();
+	}
+
+	private static void abrirChrome() {//METODO ABRIRCHROME
+	
+	File file = new File("/home/bruno/Área de Trabalho/DesafioConductorQA/TestesFront/chromedriver.exe"); //IMPORTAÇÃO DO ARQUIVO DO DRIVER DIRETAMENTE DA PASTA ONDE ELE FOI ALOCADO
+	System.setProperty("webdriver.chrome.driver", file.getAbsolutePath());//SETANDO A PROPRIEDADE “WEBDRIVER.CHROME.DRIVER” NAS PROPRIEDADES DO SISTEMA COM O VALOR DO CAMINHO DO DRIVER, PARA QUE O SELENIUM POSSA ENCONTRAR UMA INSTÂNCIA CORRETA DA CLASSE CHROMEDRIVER
+	WebDriver driver = new ChromeDriver(); //PARA ABRIR UMA INSTÂNCIA DO BROWSER CHROME
+	driver.get("http://provaqa.marketpay.com.br:9083/desafioqa/login");//ACESSO AO SITE A SER TESTADO 
+		
+	//TESTANDO ENTRADA NO SITE COM USUÁRIO INEXISTENTE ID:ADMIN, SENHA:ADMIN
+	WebElement idlogin = driver.findElement(By.name("username")); //LOGIN
+	idlogin.sendKeys("admin");//VALOR INSERIDO NO CAMPO LOGIN
+	WebElement valor_senha = driver.findElement(By.name("password"));//SENHA
+	valor_senha.sendKeys("admin");//VALOR INSERIDO NO CAMPO DA SENHA
+	WebElement botao_singin = driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div/form/footer/button")); 
+	botao_singin.click();//CLICANDO NO BOTÃO SIGN IN
+	
+	//COMANDO PARA CLICAR NAS SEGUINTES OPÇÕES: QA>CLIENTE>INCLUIR 
+	WebElement click_opcao_qa = driver.findElement(By.xpath("/html/body/aside/nav/ul[2]/li/a/i")); 
+	click_opcao_qa.click(); //CLICANDO NA OPÇÃO QA
+	WebElement click_opcao_clientes = driver.findElement(By.xpath("/html/body/aside/nav/ul[2]/li/ul/li[1]/a/span")); 
+	click_opcao_clientes.click();//CLICANDO NA OPÇÃO CLIENTES
+	WebElement click_opcao_incluir= driver.findElement(By.xpath("/html/body/aside/nav/ul[2]/li/ul/li[1]/ul/li[1]/a/i"));
+	click_opcao_incluir.click();//CLICANDO NA OPÇÃO INCLUIR
+	
+	//INICIANDO TESTES: TESTANDO CADASTRO COM TODOS OS CAMPOS PREENCHIDOS
+	WebElement campo_nome = driver.findElement(By.name("nome")); 
+	campo_nome.sendKeys("Jose Carlos");//PREENCHENDO O CAMPO NOME
+	WebElement campo_cpf = driver.findElement(By.xpath("/html/body/div[2]/div/div/form[2]/div/div/fieldset[2]/div/div/div/input")); 
+	campo_cpf.sendKeys("01234567890");//PREENCHENDO O CAMPO CPF
+	WebElement click_campo_ativo = driver.findElement(By.xpath("/html/body/div[2]/div/div/form[2]/div/div/fieldset[3]/div/div/div/select")); 
+	click_campo_ativo.click();//CLICANDO NA OPÇÃO "ATIVO"
+	WebElement campo_saldo_disponivel = driver.findElement(By.xpath("/html/body/div[2]/div/div/form[2]/div/div/fieldset[4]/div/div/div/input")); 
+	campo_saldo_disponivel.sendKeys("10000");//PREENCHENDO O CAMPO "SALDO DISPONIVEL"
+	WebElement click_opcao_salvar = driver.findElement(By.id("botaoSalvar")); 
+	click_opcao_salvar.click();//CLICANDO NA OPÇÃO "SALVAR"
+	
+	driver.manage().timeouts().implicitlyWait(500, TimeUnit.SECONDS);
+	driver.get("http://provaqa.marketpay.com.br:9083/desafioqa/login");//ACESSO AO SITE A SER TESTADO
+	driver.findElement(By.id("botaoSalvar")).click();
+	
+	
+	//COMANDO PARA CLICAR NAS SEGUINTES OPÇÕES: QA>CLIENTE>INCLUIR 
+	WebElement click_opcao_qa_2 = driver.findElement(By.xpath("/html/body/aside/nav/ul[2]/li/a/i")); 
+	click_opcao_qa_2.click(); //CLICANDO NA OPÇÃO QA
+	WebElement click_opcao_clientes_2 = driver.findElement(By.xpath("/html/body/aside/nav/ul[2]/li/ul/li[1]/a/span")); 
+	click_opcao_clientes_2.click();//CLICANDO NA OPÇÃO CLIENTES
+	WebElement click_opcao_incluir_2= driver.findElement(By.xpath("/html/body/aside/nav/ul[2]/li/ul/li[1]/ul/li[1]/a/i"));
+	click_opcao_incluir_2.click();//CLICANDO NA OPÇÃO INCLUIR
+	
+	}
+}

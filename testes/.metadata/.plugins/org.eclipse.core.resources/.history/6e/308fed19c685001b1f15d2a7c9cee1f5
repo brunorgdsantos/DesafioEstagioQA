@@ -1,0 +1,21 @@
+import java.util.Scanner;
+
+public class exercicio1 {
+
+	public static void main(String[] args) {
+		Scanner teclado = new Scanner (System.in);//objeto teclado da nova classe Scanner;
+		
+		String candidato[];
+		int voto[];
+		int votacao, totalVotos, maiorVotacao;
+		
+		candidato = new String [5];
+		voto = new int [5];
+		
+		for(int i = 0; i < 5; i++) {
+			System.out.printf("Canditado %s", candidato[i]);
+			candidato[i] = teclado.nextLine();
+		}
+		
+	}
+}

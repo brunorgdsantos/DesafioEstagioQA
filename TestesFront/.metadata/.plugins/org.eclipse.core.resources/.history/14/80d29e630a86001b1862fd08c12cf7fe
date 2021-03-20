@@ -1,0 +1,27 @@
+import java.io.File;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Secundario {
+	
+	static WebDriver driver;
+	
+	public static void abrirChrome2() {
+		
+		//File file = new File("/home/bruno/Área de Trabalho/DesafioConductorQA/TestesFront/chromedriver.exe"); //IMPORTAÇÃO DO ARQUIVO DO DRIVER DIRETAMENTE DA PASTA ONDE ELE FOI ALOCADO
+		//System.setProperty("webdriver.chrome.driver", file.getAbsolutePath());//SETANDO A PROPRIEDADE “WEBDRIVER.CHROME.DRIVER” NAS PROPRIEDADES DO SISTEMA COM O VALOR DO CAMINHO DO DRIVER, PARA QUE O SELENIUM POSSA ENCONTRAR UMA INSTÂNCIA CORRETA DA CLASSE CHROMEDRIVER
+		WebDriver driver = new ChromeDriver(); //PARA ABRIR UMA INSTÂNCIA DO BROWSER CHROME
+		driver.get("http://provaqa.marketpay.com.br:9083/desafioqa/incluirCliente");//ACESSO AO SITE A SER TESTADO 
+		
+		//COMANDO PARA CLICAR NAS SEGUINTES OPÇÕES: QA>CLIENTE>INCLUIR 
+		WebElement click_opcao_qa_2 = driver.findElement(By.xpath("/html/body/aside/nav/ul[2]/li/a/i")); 
+		click_opcao_qa_2.click(); //CLICANDO NA OPÇÃO QA
+		WebElement click_opcao_clientes_2 = driver.findElement(By.xpath("/html/body/aside/nav/ul[2]/li/ul/li[1]/a/span")); 
+		click_opcao_clientes_2.click();//CLICANDO NA OPÇÃO CLIENTES
+		WebElement click_opcao_incluir_2= driver.findElement(By.xpath("/html/body/aside/nav/ul[2]/li/ul/li[1]/ul/li[1]/a/i"));
+		click_opcao_incluir_2.click();//CLICANDO NA OPÇÃO INCLUIR
+	}
+}

@@ -1,0 +1,45 @@
+import java.util.Scanner;
+
+public class exercicio1 {
+
+	public static void main(String[] args) {
+		Scanner teclado = new Scanner (System.in);//objeto teclado da nova classe Scanner;
+		
+		String aluno[];//Definindo os tipos de vetores
+		float nota1[], nota2[], media[], mediaTurma;
+		
+		aluno = new String[30];
+		nota1 = new float[30];
+		nota2 = new float[30];
+		media = new float[30];
+		
+		mediaTurma = 0;
+		
+		for(int i = 0; i < 3; i++) {
+			System.out.print("Nome Aluno: ");
+			aluno[i] = teclado.nextLine();
+			System.out.print("Nota1: ");
+			nota1[i] = teclado.nextFloat();
+			System.out.print("Nota2: ");
+			nota2[i] = teclado.nextFloat();
+			teclado.nextLine();
+			
+			media[i] = (nota1[i] + nota2[i]) / 2;
+			
+			mediaTurma += media[i];
+			System.out.printf("Media Aluno: ", media[i]);
+			
+			if(media[i] >= 6) {
+				System.out.print("Aluno Aprovado");
+			}else System.out.print("Aluno reprovado");
+		}
+		
+		mediaTurma /= 3;
+		
+		for(int i = 0; i < 3; i++) {
+			System.out.printf("Aluno: %s, Media: %.f", aluno[i], media[i]);
+		}
+		System.out.printf("Media turma = %f", mediaTurma);
+	}
+
+}

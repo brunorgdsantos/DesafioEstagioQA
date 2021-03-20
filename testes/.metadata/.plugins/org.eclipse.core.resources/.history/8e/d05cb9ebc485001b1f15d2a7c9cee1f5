@@ -1,0 +1,11 @@
+import java.util.Scanner;
+
+public class exercicio1 {
+
+	public static void main(String[] args) {
+		Scanner teclado = new Scanner (System.in);//objeto teclado da nova classe Scanner;
+		
+		String candidato1, candidato2, candidato3, candidato4, candidato5;
+		int voto1, voto2, voto3, voto4, voto5;
+	}
+}
