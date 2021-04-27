@@ -16,7 +16,7 @@ Postman
 
 ### 🔧 Instalação
 
-Os passos para instalalçao dos softwares podem ser seguidos conforme recomendado.
+Os passos para instalalçao dos softwares podem ser seguidos conforme recomendado em seus respectivos sites.
 
 ## ⚙️ Os testes
 
